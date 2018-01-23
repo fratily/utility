@@ -69,7 +69,7 @@ class Hash{
         $node   = &$root;
 
         foreach(explode(".", $key) as $key){
-            if(!array_key_exists($key, $node)){
+            if(!is_array($key) || !array_key_exists($key, $node)){
                 return $origin;
             }
             
