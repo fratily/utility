@@ -28,6 +28,47 @@ class Variable{
     const T_NULL        = "null";
     const T_UNKNOWN     = "unknown";
     
+    public static function isInt($var){
+        return is_int($var);
+    }
+    
+    public static function isFloat($var){
+        return is_float($var);
+    }
+    
+    public static function isString($var){
+        return is_string($var);
+    }
+    
+    public static function isBool($var){
+        return is_bool($var);
+    }
+    
+    public static function isArray($var, bool $strict = true){
+        return is_array($var) || ($strict
+            && $var instanceof \ArrayAccess
+            && $var instanceof \Traversable
+            && $var instanceof \Serializable
+            && $var instanceof \Countable
+        );
+    }
+    
+    public static function isObject($var){
+        return is_object($var);
+    }
+    
+    public static function isResource($var){
+        return is_resource($var);
+    }
+    
+    public static function isIterable($var){
+        return is_array($var) || $var instanceof \Traversable;
+    }
+    
+    public static function isArrayAccessible($var){
+        return (is_array($var) || $var instanceof \ArrayAccess);
+    }
+    
     /**
      * 変数の型を取得する
      * 
@@ -102,5 +143,13 @@ class Variable{
         }
         
         return $return;
+    }
+    
+    public static function serialize($var){
+        return serialize($var);
+    }
+    
+    public static function unserialize($var){
+        return unserialize($var);
     }
 }
