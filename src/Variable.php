@@ -16,7 +16,7 @@ namespace Fratily\Utility;
 /**
  * 
  */
-class Dumper{
+class Variable{
     
     /**
      * 簡易的な変数ダンプ
