@@ -1,7 +1,10 @@
 {
     "name": "fratily/utility",
     "type": "library",
-    "keywords": ["Fratily", "utility"],
+    "keywords": [
+        "fratily",
+        "utility"
+    ],
     "authors": [
         {
             "name": "Kento Oka",
@@ -12,16 +15,9 @@
     "require": {
         "php": "^7.1"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^6.0"
-    },
     "autoload": {
         "psr-4": {
-            "Fratily\\Utility\\": "src/",
-            "Fratily\\UtilityTest\\": "tests/"
+            "Fratily\\Utility\\": "src/"
         }
-    },
-    "scripts": {
-        "test": "phpunit tests/"
     }
 }
