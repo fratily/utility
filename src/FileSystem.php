@@ -34,7 +34,7 @@ class FileSystem{
             $path   = $dir . DIRECTORY_SEPARATOR . $file;
 
             if(is_dir($path) && $recursive){
-                $result = array_merge($result, static::getFiles(true));
+                $result = array_merge($result, static::getFiles($path, true));
             }elseif(is_file($path)){
                 $result[]   = $path;
             }
